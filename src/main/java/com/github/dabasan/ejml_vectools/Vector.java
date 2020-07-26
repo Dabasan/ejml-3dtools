@@ -80,6 +80,21 @@ public class Vector {
 		mat.set(3, 0, 1.0);
 	}
 
+	@Override
+	public String toString() {
+		var sb = new StringBuilder();
+
+		sb.append("(");
+		sb.append(this.getX());
+		sb.append(",");
+		sb.append(this.getY());
+		sb.append(",");
+		sb.append(this.getZ());
+		sb.append(")");
+
+		return sb.toString();
+	}
+
 	public double getX() {
 		return mat.get(0, 0);
 	}
