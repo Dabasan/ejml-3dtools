@@ -4,17 +4,17 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.dabasan</groupId>
-	<artifactId>ejml-vectools</artifactId>
+	<artifactId>ejml-3dtools</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>ejml-vectools</name>
-	<description>A Java library for 3D vector operations</description>
-	<url>https://github.com/Dabasan/ejml-vectools</url>
+	<name>ejml-3dtools</name>
+	<description>A Java library for 3D vector and matrix operations</description>
+	<url>https://github.com/Dabasan/ejml-3dtools</url>
 
 	<licenses>
 		<license>
 			<name>MIT</name>
-			<url>https://github.com/Dabasan/ejml-vectools/blob/master/LICENSE</url>
+			<url>https://github.com/Dabasan/ejml-3dtools/blob/master/LICENSE</url>
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
@@ -37,9 +37,9 @@
 	</distributionManagement>
 
 	<scm>
-		<connection>scm:git:https://github.com/Dabasan/ejml-vectools.git</connection>
-		<developerConnection>scm:git:https://github.com/Dabasan/ejml-vectools.git</developerConnection>
-		<url>https://github.com/Dabasan/ejml-vectools</url>
+		<connection>scm:git:https://github.com/Dabasan/ejml-3dtools.git</connection>
+		<developerConnection>scm:git:https://github.com/Dabasan/ejml-3dtools.git</developerConnection>
+		<url>https://github.com/Dabasan/ejml-3dtools</url>
 	</scm>
 
 	<properties>
