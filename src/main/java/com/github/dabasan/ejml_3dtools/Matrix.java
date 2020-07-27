@@ -1,5 +1,7 @@
 package com.github.dabasan.ejml_3dtools;
 
+import java.util.Random;
+
 import org.ejml.simple.SimpleMatrix;
 
 /**
@@ -126,6 +128,26 @@ public class Matrix {
 		var ret = new Matrix(0.0);
 		for (int i = 0; i < 4; i++) {
 			ret.set(i, i, 1.0);
+		}
+
+		return ret;
+	}
+	/**
+	 * Creates a matrix with random elements in it.<br>
+	 * Range of each element x is -1.0 <= x <= 1.0 .
+	 * 
+	 * @return Random matrix
+	 */
+	public static Matrix createRandomMatrix() {
+		var ret = new Matrix(0.0);
+		var random = new Random();
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				int sign = (random.nextInt() % 2 == 0) ? 1 : -1;
+				double value = random.nextDouble() * sign;
+
+				ret.set(i, j, value);
+			}
 		}
 
 		return ret;
