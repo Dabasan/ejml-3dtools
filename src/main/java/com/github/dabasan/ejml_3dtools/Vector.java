@@ -343,7 +343,7 @@ public class Vector {
 	 *            Rotation angle (radian)
 	 * @return Rotated vector
 	 */
-	public Vector rotAroundAxis(double axisX, double axisY, double axisZ, double th) {
+	public Vector rot(double axisX, double axisY, double axisZ, double th) {
 		var rotMat = Matrix.createRotationMatrix(axisX, axisY, axisZ, th);
 		var rotSM = rotMat.getSM().mult(this.v);
 
