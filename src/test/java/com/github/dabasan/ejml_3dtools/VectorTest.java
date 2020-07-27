@@ -1,11 +1,9 @@
-package com.github.dabasan.ejml_vectools;
+package com.github.dabasan.ejml_3dtools;
 
 import static org.junit.Assert.*;
 
 import org.ejml.simple.SimpleMatrix;
 import org.junit.Test;
-
-import com.github.dabasan.ejml_3dtools.Vector;
 
 /**
  * Test class for Vector
@@ -73,7 +71,7 @@ public class VectorTest {
 
 	@Test
 	public void testToString() {
-		System.out.println(new Vector(1.0, 2.0, 3.0));
+		// System.out.println(new Vector(1.0, 2.0, 3.0));
 	}
 
 	@Test
@@ -169,4 +167,33 @@ public class VectorTest {
 
 		assertEquals(expected, actual, 1.0E-6);
 	}
+
+	// Todo: Conduct tests with OpenGL programs.
+	/*
+	@Test
+	public void testTransform() {
+		
+	}
+	@Test
+	public void testTransformSR() {
+		
+	}
+	
+	@Test
+	public void testRotX() {
+		
+	}
+	@Test
+	public void testRotY() {
+		
+	}
+	@Test
+	public void testRotZ() {
+		
+	}
+	@Test
+	public void testRot() {
+		
+	}
+	*/
 }
