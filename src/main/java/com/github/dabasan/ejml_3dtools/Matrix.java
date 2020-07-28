@@ -134,7 +134,7 @@ public class Matrix {
 	}
 	/**
 	 * Creates a matrix with random elements in it.<br>
-	 * Range of each element x is -1.0 <= x <= 1.0 .
+	 * Range of each element is between 0.0 and 1.0.
 	 * 
 	 * @return Random matrix
 	 */
@@ -143,9 +143,7 @@ public class Matrix {
 		var random = new Random();
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
-				int sign = (random.nextInt() % 2 == 0) ? 1 : -1;
-				double value = random.nextDouble() * sign;
-
+				double value = random.nextDouble();
 				ret.set(i, j, value);
 			}
 		}
