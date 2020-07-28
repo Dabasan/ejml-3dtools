@@ -257,6 +257,8 @@ public class Matrix {
 	 *            Y-component of the axis
 	 * @param axisZ
 	 *            Z-component of the axis
+	 * @param th
+	 *            Rotation angle (radian)
 	 * @return Rotation matrix
 	 */
 	public static Matrix createRotationMatrix(double axisX, double axisY, double axisZ, double th) {
