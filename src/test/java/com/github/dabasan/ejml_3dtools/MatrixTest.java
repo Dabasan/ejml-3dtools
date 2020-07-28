@@ -23,6 +23,14 @@ public class MatrixTest {
 		// System.out.println(mat);
 	}
 	@Test
+	public void testConstructor_Matrix() {
+		var mat1 = Matrix.createRandomMatrix();
+		var mat2 = new Matrix(mat1);
+
+		// System.out.println(mat1);
+		// System.out.println(mat2);
+	}
+	@Test
 	public void testConstructor_SimpleMatrix() {
 		var sm = new SimpleMatrix(4, 4);
 

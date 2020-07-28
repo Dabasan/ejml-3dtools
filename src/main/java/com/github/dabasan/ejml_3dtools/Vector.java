@@ -12,16 +12,14 @@ public class Vector {
 	private SimpleMatrix v;
 
 	/**
-	 * X, Y and Z elements are set to 0.<br>
-	 * W element is set to 1.
+	 * X, Y and Z elements are set to 0.
 	 */
 	public Vector() {
 		v = new SimpleMatrix(4, 1);
 		v.set(3, 0, 1.0);
 	}
 	/**
-	 * Each element is set to the specified value.<br>
-	 * W element is set to 1.
+	 * Each element is set to the specified value.
 	 * 
 	 * @param x
 	 *            X
@@ -56,6 +54,20 @@ public class Vector {
 		v.set(0, 0, x / size);
 		v.set(1, 0, y / size);
 		v.set(2, 0, z / size);
+		v.set(3, 0, 1.0);
+	}
+	/**
+	 * Creates a vector from a Vector instance.
+	 * 
+	 * @param vec
+	 *            Vector instance
+	 */
+	public Vector(Vector vec) {
+		v = new SimpleMatrix(4, 1);
+
+		v.set(0, 0, vec.getX());
+		v.set(1, 0, vec.getY());
+		v.set(2, 0, vec.getZ());
 		v.set(3, 0, 1.0);
 	}
 	/**

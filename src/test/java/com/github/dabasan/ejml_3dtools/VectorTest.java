@@ -40,6 +40,16 @@ public class VectorTest {
 		assertArrayEquals(expected, actual, 1.0E-3);
 	}
 	@Test
+	public void testConstructor_Vector() {
+		double[] expected = new double[]{1.0, 2.0, 3.0};
+
+		var v1 = new Vector(1.0, 2.0, 3.0);
+		var v2 = new Vector(v1);
+		double[] actual = new double[]{v2.getX(), v2.getY(), v2.getZ()};
+
+		assertArrayEquals(expected, actual, 1.0E-6);
+	}
+	@Test
 	public void testConstructor_SimpleMatrix() {
 		double[] expected = new double[]{3.0, 4.0, -5.0};
 

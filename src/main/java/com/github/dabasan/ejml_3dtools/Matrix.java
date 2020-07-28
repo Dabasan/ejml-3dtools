@@ -35,6 +35,21 @@ public class Matrix {
 		}
 	}
 	/**
+	 * Creates a matrix from a Matrix instance.
+	 * 
+	 * @param m
+	 *            Matrix instance
+	 */
+	public Matrix(Matrix m) {
+		mat = new SimpleMatrix(4, 4);
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				mat.set(i, j, m.get(i, j));
+			}
+		}
+	}
+	/**
 	 * Creates a matrix from a SimpleMatrix instance.<br>
 	 * Dimension of the input matrix must be 4x4.<br>
 	 * All elements are set to 0 in case input dimension is invalid.
