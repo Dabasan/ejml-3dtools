@@ -87,6 +87,8 @@ public class Matrix {
 			sb.append("\n");
 		}
 
+		sb.setLength(sb.length() - 1);
+
 		return sb.toString();
 	}
 
