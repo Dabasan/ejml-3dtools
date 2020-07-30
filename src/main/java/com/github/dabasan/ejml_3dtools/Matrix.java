@@ -113,6 +113,23 @@ public class Matrix {
 	}
 
 	/**
+	 * Returns an array containing all of the elements in this matrix.
+	 * 
+	 * @return Array
+	 */
+	public double[] toArray() {
+		var ret = new double[16];
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				ret[i * 4 + j] = mat.get(i, j);
+			}
+		}
+
+		return ret;
+	}
+
+	/**
 	 * Transposes this matrix.
 	 * 
 	 * @return Transposed matrix

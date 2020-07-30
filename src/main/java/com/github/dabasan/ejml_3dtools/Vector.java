@@ -144,6 +144,21 @@ public class Vector {
 	}
 
 	/**
+	 * Returns an array containing all of the elements in this vector.
+	 * 
+	 * @return Array
+	 */
+	public double[] toArray() {
+		var ret = new double[3];
+
+		ret[0] = v.get(0, 0);
+		ret[1] = v.get(1, 0);
+		ret[2] = v.get(2, 0);
+
+		return ret;
+	}
+
+	/**
 	 * Returns the squared size of this vector.
 	 * 
 	 * @return Squared size
