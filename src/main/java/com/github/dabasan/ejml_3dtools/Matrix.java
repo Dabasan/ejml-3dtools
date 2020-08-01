@@ -128,6 +128,23 @@ public class Matrix {
 
 		return ret;
 	}
+	/**
+	 * Returns a 2-dimensional array containing all of the elements in this
+	 * matrix.
+	 * 
+	 * @return Array
+	 */
+	public double[][] toArray2() {
+		var ret = new double[4][4];
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				ret[i][j] = m.get(i, j);
+			}
+		}
+
+		return ret;
+	}
 
 	/**
 	 * Addition
