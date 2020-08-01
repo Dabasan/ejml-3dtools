@@ -46,6 +46,40 @@ public class MatrixTest {
 	}
 
 	@Test
+	public void testAdd() {
+		var mat1 = Matrix.createRandomMatrix();
+		var mat2 = Matrix.createRandomMatrix();
+
+		var add = mat1.add(mat2);
+
+		// System.out.println(mat1);
+		// System.out.println(mat2);
+		// System.out.println(add);
+	}
+	@Test
+	public void testSub() {
+		var mat1 = Matrix.createRandomMatrix();
+		var mat2 = Matrix.createRandomMatrix();
+
+		var sub = mat1.sub(mat2);
+
+		// System.out.println(mat1);
+		// System.out.println(mat2);
+		// System.out.println(sub);
+	}
+	@Test
+	public void testMult() {
+		var mat1 = Matrix.createRandomMatrix();
+		var mat2 = Matrix.createRandomMatrix();
+
+		var mult = mat1.mult(mat2);
+
+		// System.out.println(mat1);
+		// System.out.println(mat2);
+		// System.out.println(mult);
+	}
+
+	@Test
 	public void testTranspose() {
 		var mat = Matrix.createRandomMatrix();
 		var transposed = mat.transpose();
