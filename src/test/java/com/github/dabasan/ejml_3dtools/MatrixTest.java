@@ -46,6 +46,37 @@ public class MatrixTest {
 	}
 
 	@Test
+	public void testToArray() {
+		var mat = Matrix.createRandomMatrix();
+		double[] arr = mat.toArray();
+
+		// System.out.println(mat);
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				// System.out.print(arr[i * 4 + j]);
+				// System.out.print(" ");
+			}
+			// System.out.println();
+		}
+	}
+	@Test
+	public void testToArray2() {
+		var mat = Matrix.createRandomMatrix();
+		double[][] arr = mat.toArray2();
+
+		// System.out.println(mat);
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				// System.out.print(arr[i][j]);
+				// System.out.print(" ");
+			}
+			// System.out.println();
+		}
+	}
+
+	@Test
 	public void testAdd() {
 		var mat1 = Matrix.createRandomMatrix();
 		var mat2 = Matrix.createRandomMatrix();
