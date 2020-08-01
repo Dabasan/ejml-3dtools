@@ -11,13 +11,13 @@ import org.ejml.simple.SimpleMatrix;
  *
  */
 public class Matrix {
-	private SimpleMatrix mat;
+	private SimpleMatrix m;
 
 	/**
 	 * All elements are set to 0.
 	 */
 	public Matrix() {
-		mat = new SimpleMatrix(4, 4);
+		m = new SimpleMatrix(4, 4);
 	}
 	/**
 	 * All elements are set to the value specified.
@@ -26,26 +26,26 @@ public class Matrix {
 	 *            Value
 	 */
 	public Matrix(double value) {
-		mat = new SimpleMatrix(4, 4);
+		m = new SimpleMatrix(4, 4);
 
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
-				mat.set(i, j, value);
+				m.set(i, j, value);
 			}
 		}
 	}
 	/**
 	 * Creates a matrix from a Matrix instance.
 	 * 
-	 * @param m
+	 * @param mat
 	 *            Matrix instance
 	 */
-	public Matrix(Matrix m) {
-		mat = new SimpleMatrix(4, 4);
+	public Matrix(Matrix mat) {
+		m = new SimpleMatrix(4, 4);
 
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
-				mat.set(i, j, m.get(i, j));
+				m.set(i, j, mat.get(i, j));
 			}
 		}
 	}
@@ -58,18 +58,18 @@ public class Matrix {
 	 *            Instance of SimpleMatrix
 	 */
 	public Matrix(SimpleMatrix sm) {
-		mat = new SimpleMatrix(4, 4);
+		m = new SimpleMatrix(4, 4);
 
 		if (sm.numRows() == 4 && sm.numCols() == 4) {
 			for (int i = 0; i < 4; i++) {
 				for (int j = 0; j < 4; j++) {
-					mat.set(i, j, sm.get(i, j));
+					m.set(i, j, sm.get(i, j));
 				}
 			}
 		} else {
 			for (int i = 0; i < 4; i++) {
 				for (int j = 0; j < 4; j++) {
-					mat.set(i, j, 0.0);
+					m.set(i, j, 0.0);
 				}
 			}
 		}
@@ -81,7 +81,7 @@ public class Matrix {
 
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
-				sb.append(this.mat.get(i, j));
+				sb.append(this.m.get(i, j));
 				sb.append(" ");
 			}
 			sb.append("\n");
@@ -98,18 +98,18 @@ public class Matrix {
 	 * @return SimpleMatrix instance
 	 */
 	public SimpleMatrix getSM() {
-		return mat;
+		return m;
 	}
 
 	public double get(int row, int col) {
-		return mat.get(row, col);
+		return m.get(row, col);
 	}
 	public float getFloat(int row, int col) {
-		return (float) mat.get(row, col);
+		return (float) m.get(row, col);
 	}
 
 	public void set(int row, int col, double value) {
-		mat.set(row, col, value);
+		m.set(row, col, value);
 	}
 
 	/**
@@ -122,11 +122,65 @@ public class Matrix {
 
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
-				ret[i * 4 + j] = mat.get(i, j);
+				ret[i * 4 + j] = m.get(i, j);
 			}
 		}
 
 		return ret;
+	}
+
+	/**
+	 * Addition
+	 * 
+	 * @param mat
+	 *            Matrix
+	 * @return Matrix
+	 */
+	public Matrix add(Matrix mat) {
+		var ret = new Matrix();
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				double v1 = this.m.get(i, j);
+				double v2 = mat.m.get(i, j);
+
+				ret.set(i, j, v1 + v2);
+			}
+		}
+
+		return ret;
+	}
+	/**
+	 * Subtraction
+	 * 
+	 * @param mat
+	 *            Matrix
+	 * @return Matrix
+	 */
+	public Matrix sub(Matrix mat) {
+		var ret = new Matrix();
+
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				double v1 = this.m.get(i, j);
+				double v2 = mat.m.get(i, j);
+
+				ret.set(i, j, v1 - v2);
+			}
+		}
+
+		return ret;
+	}
+	/**
+	 * Multiplication
+	 * 
+	 * @param mat
+	 *            Matrix
+	 * @return Multiplied matrix
+	 */
+	public Matrix mult(Matrix mat) {
+		SimpleMatrix multSM = this.m.mult(mat.m);
+		return new Matrix(multSM);
 	}
 
 	/**
@@ -136,9 +190,10 @@ public class Matrix {
 	 */
 	public Matrix transpose() {
 		var ret = new Matrix();
+
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 4; j++) {
-				ret.set(i, j, mat.get(j, i));
+				ret.set(i, j, m.get(j, i));
 			}
 		}
 
@@ -150,7 +205,7 @@ public class Matrix {
 	 * @return Inverse matrix
 	 */
 	public Matrix invert() {
-		return new Matrix(mat.invert());
+		return new Matrix(m.invert());
 	}
 
 	/**
