@@ -17,7 +17,7 @@ public class VectorTest {
 		double[] expected = new double[]{0.0, 0.0, 0.0};
 
 		var vec = new Vector();
-		double[] actual = new double[]{vec.getX(), vec.getY(), vec.getZ()};
+		double[] actual = vec.toArray();
 
 		assertArrayEquals(expected, actual, 1.0E-6);
 	}
@@ -26,7 +26,7 @@ public class VectorTest {
 		double[] expected = new double[]{3.0, 4.0, -5.0};
 
 		var vec = new Vector(3.0, 4.0, -5.0);
-		double[] actual = new double[]{vec.getX(), vec.getY(), vec.getZ()};
+		double[] actual = vec.toArray();
 
 		assertArrayEquals(expected, actual, 1.0E-6);
 	}
@@ -35,7 +35,7 @@ public class VectorTest {
 		double[] expected = new double[]{0.5774, 0.5774, -0.5774};
 
 		var vec = new Vector(Math.PI / 4.0, Math.PI / 4.0);
-		double[] actual = new double[]{vec.getX(), vec.getY(), vec.getZ()};
+		double[] actual = vec.toArray();
 
 		assertArrayEquals(expected, actual, 1.0E-3);
 	}
@@ -45,7 +45,7 @@ public class VectorTest {
 
 		var v1 = new Vector(1.0, 2.0, 3.0);
 		var v2 = new Vector(v1);
-		double[] actual = new double[]{v2.getX(), v2.getY(), v2.getZ()};
+		double[] actual = v2.toArray();
 
 		assertArrayEquals(expected, actual, 1.0E-6);
 	}
@@ -59,7 +59,7 @@ public class VectorTest {
 		mat.set(2, 0, -5.0);
 
 		var vec = new Vector(mat);
-		double[] actual = new double[]{vec.getX(), vec.getY(), vec.getZ()};
+		double[] actual = vec.toArray();
 
 		assertArrayEquals(expected, actual, 1.0E-6);
 	}
@@ -74,7 +74,7 @@ public class VectorTest {
 		mat.set(3, 0, 1.0);
 
 		var vec = new Vector(mat);
-		double[] actual = new double[]{vec.getX(), vec.getY(), vec.getZ()};
+		double[] actual = vec.toArray();
 
 		assertArrayEquals(expected, actual, 1.0E-6);
 	}
@@ -109,8 +109,7 @@ public class VectorTest {
 
 		var vec = new Vector(1.0, 1.0, 1.0);
 		var normalizedVec = vec.normalize();
-		double[] actual = new double[]{normalizedVec.getX(), normalizedVec.getY(),
-				normalizedVec.getZ()};
+		double[] actual = normalizedVec.toArray();
 
 		assertArrayEquals(expected, actual, 1.0E-3);
 	}
@@ -152,7 +151,7 @@ public class VectorTest {
 		var v1 = new Vector(1.0, 2.0, 3.0);
 		var v2 = new Vector(4.0, 7.0, -2.0);
 		var sub = v1.sub(v2);
-		double[] actual = new double[]{sub.getX(), sub.getY(), sub.getZ()};
+		double[] actual = sub.toArray();
 
 		assertArrayEquals(expected, actual, 1.0E-6);
 	}
@@ -163,7 +162,7 @@ public class VectorTest {
 		var v1 = new Vector(3.0, 4.0, 1.0);
 		var v2 = new Vector(3.0, 7.0, 5.0);
 		var cross = v1.cross(v2);
-		double[] actual = new double[]{cross.getX(), cross.getY(), cross.getZ()};
+		double[] actual = cross.toArray();
 
 		assertArrayEquals(expected, actual, 1.0E-6);
 	}
