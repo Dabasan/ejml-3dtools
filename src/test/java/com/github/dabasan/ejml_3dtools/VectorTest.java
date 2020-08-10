@@ -156,6 +156,16 @@ public class VectorTest {
 		assertArrayEquals(expected, actual, 1.0E-6);
 	}
 	@Test
+	public void testScale() {
+		double[] expected = new double[]{2.0, 3.0, 4.0};
+
+		var vec = new Vector(1.0, 1.5, 2.0);
+		var scale = vec.scale(2.0);
+		double[] actual = scale.toArray();
+
+		assertArrayEquals(expected, actual, 1.0E-6);
+	}
+	@Test
 	public void testCross() {
 		double[] expected = new double[]{13.0, -12.0, 9.0};
 

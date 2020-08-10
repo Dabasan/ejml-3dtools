@@ -259,6 +259,20 @@ public class Vector {
 		return new Vector(x, y, z);
 	}
 	/**
+	 * Scales this vector.
+	 * 
+	 * @param scale
+	 *            Scale
+	 * @return Scaled vector
+	 */
+	public Vector scale(double scale) {
+		double x = this.getX() * scale;
+		double y = this.getY() * scale;
+		double z = this.getZ() * scale;
+
+		return new Vector(x, y, z);
+	}
+	/**
 	 * Cross product
 	 * 
 	 * @param v
