@@ -1,5 +1,7 @@
 package com.github.dabasan.ejml_3dtools;
 
+import static org.junit.Assert.*;
+
 import java.util.Random;
 
 import org.ejml.simple.SimpleMatrix;
@@ -83,9 +85,11 @@ public class MatrixTest {
 
 		var add = mat1.add(mat2);
 
-		// System.out.println(mat1);
-		// System.out.println(mat2);
-		// System.out.println(add);
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				assertEquals(mat1.get(i, j) + mat2.get(i, j), add.get(i, j), 1.0E-6);
+			}
+		}
 	}
 	@Test
 	public void testSub() {
@@ -94,9 +98,11 @@ public class MatrixTest {
 
 		var sub = mat1.sub(mat2);
 
-		// System.out.println(mat1);
-		// System.out.println(mat2);
-		// System.out.println(sub);
+		for (int i = 0; i < 4; i++) {
+			for (int j = 0; j < 4; j++) {
+				assertEquals(mat1.get(i, j) - mat2.get(i, j), sub.get(i, j), 1.0E-6);
+			}
+		}
 	}
 	@Test
 	public void testMult() {

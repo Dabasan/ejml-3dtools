@@ -115,25 +115,6 @@ public class VectorTest {
 	}
 
 	@Test
-	public void testAngleV() {
-		double expected = 0.61548;
-
-		var vec = new Vector(1.0, 1.0, 1.0);
-		double actual = vec.getAngleV();
-
-		assertEquals(expected, actual, 1.0E-3);
-	}
-	@Test
-	public void testAngleH() {
-		double expected = -Math.PI / 4.0;
-
-		var vec = new Vector(1.0, 1.0, 1.0);
-		double actual = vec.getAngleH();
-
-		assertEquals(expected, actual, 1.0E-3);
-	}
-
-	@Test
 	public void testAdd() {
 		double[] expected = new double[]{5.0, 9.0, 1.0};
 
@@ -185,6 +166,25 @@ public class VectorTest {
 		double actual = v1.dot(v2);
 
 		assertEquals(expected, actual, 1.0E-6);
+	}
+
+	@Test
+	public void testGetAngleV() {
+		double expected = 0.61548;
+
+		var vec = new Vector(1.0, 1.0, 1.0);
+		double actual = vec.getAngleV();
+
+		assertEquals(expected, actual, 1.0E-3);
+	}
+	@Test
+	public void testGetAngleH() {
+		double expected = -Math.PI / 4.0;
+
+		var vec = new Vector(1.0, 1.0, 1.0);
+		double actual = vec.getAngleH();
+
+		assertEquals(expected, actual, 1.0E-3);
 	}
 
 	// Todo: Conduct tests with OpenGL programs.
