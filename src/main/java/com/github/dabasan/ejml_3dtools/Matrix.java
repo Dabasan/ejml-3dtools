@@ -275,7 +275,7 @@ public class Matrix {
 		ret.set(1, 1, 1.0);
 		ret.set(1, 3, translationY);
 		ret.set(2, 2, 1.0);
-		ret.set(2, 3, translationY);
+		ret.set(2, 3, translationZ);
 		ret.set(3, 3, 1.0);
 
 		return ret;
