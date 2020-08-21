@@ -199,38 +199,6 @@ public class Vector {
 	}
 
 	/**
-	 * Returns the vertical angle of this vector.
-	 * 
-	 * @return Vertical angle (radian)
-	 */
-	public double getAngleV() {
-		var xzVec = new Vector(this.getX(), 0.0, this.getZ());
-
-		double cosTh = this.dot(xzVec) / (this.getSize() * xzVec.getSize());
-		double th = Math.acos(cosTh);
-
-		return th;
-	}
-	/**
-	 * Returns the horizontal angle of this vector.
-	 * 
-	 * @return Horizontal angle (radian)
-	 */
-	public double getAngleH() {
-		var xAxis = new Vector(1.0, 0.0, 0.0);
-		var xzVec = new Vector(this.getX(), 0.0, this.getZ());
-
-		double cosTh = xzVec.dot(xAxis) / xzVec.getSize();
-		double th = Math.acos(cosTh);
-
-		if (this.getZ() >= 0.0) {
-			th *= (-1.0f);
-		}
-
-		return th;
-	}
-
-	/**
 	 * Addition
 	 * 
 	 * @param v
@@ -302,6 +270,38 @@ public class Vector {
 	 */
 	public double dot(Vector v) {
 		return this.getX() * v.getX() + this.getY() * v.getY() + this.getZ() * v.getZ();
+	}
+
+	/**
+	 * Returns the vertical angle of this vector.
+	 * 
+	 * @return Vertical angle (radian)
+	 */
+	public double getAngleV() {
+		var xzVec = new Vector(this.getX(), 0.0, this.getZ());
+
+		double cosTh = this.dot(xzVec) / (this.getSize() * xzVec.getSize());
+		double th = Math.acos(cosTh);
+
+		return th;
+	}
+	/**
+	 * Returns the horizontal angle of this vector.
+	 * 
+	 * @return Horizontal angle (radian)
+	 */
+	public double getAngleH() {
+		var xAxis = new Vector(1.0, 0.0, 0.0);
+		var xzVec = new Vector(this.getX(), 0.0, this.getZ());
+
+		double cosTh = xzVec.dot(xAxis) / xzVec.getSize();
+		double th = Math.acos(cosTh);
+
+		if (this.getZ() >= 0.0) {
+			th *= (-1.0f);
+		}
+
+		return th;
 	}
 
 	/**
