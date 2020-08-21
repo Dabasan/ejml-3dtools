@@ -109,6 +109,15 @@ public class Vector {
 		return sb.toString();
 	}
 
+	/**
+	 * Returns the underlying SimpleMatrix instance.
+	 * 
+	 * @return SimpleMatrix instance
+	 */
+	public SimpleMatrix getSM() {
+		return v;
+	}
+
 	public double getX() {
 		return v.get(0, 0);
 	}
