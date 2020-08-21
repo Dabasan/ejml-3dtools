@@ -322,7 +322,6 @@ public class Vector {
 	 */
 	public Vector transform(Matrix matrix) {
 		var transformedSM = matrix.getSM().mult(this.v);
-
 		return new Vector(transformedSM);
 	}
 	/**
@@ -350,9 +349,7 @@ public class Vector {
 	 */
 	public Vector rotX(double th) {
 		var rotMat = Matrix.createRotationXMatrix(th);
-		var rotSM = rotMat.getSM().mult(this.v);
-
-		return new Vector(rotSM);
+		return this.transform(rotMat);
 	}
 	/**
 	 * Rotates this vector around the Y axis.
@@ -363,9 +360,7 @@ public class Vector {
 	 */
 	public Vector rotY(double th) {
 		var rotMat = Matrix.createRotationYMatrix(th);
-		var rotSM = rotMat.getSM().mult(this.v);
-
-		return new Vector(rotSM);
+		return this.transform(rotMat);
 	}
 	/**
 	 * Rotates this vector around the Z axis.
@@ -376,9 +371,7 @@ public class Vector {
 	 */
 	public Vector rotZ(double th) {
 		var rotMat = Matrix.createRotationZMatrix(th);
-		var rotSM = rotMat.getSM().mult(this.v);
-
-		return new Vector(rotSM);
+		return this.transform(rotMat);
 	}
 	/**
 	 * Rotates this vector around an axis specified.
@@ -395,8 +388,6 @@ public class Vector {
 	 */
 	public Vector rot(double axisX, double axisY, double axisZ, double th) {
 		var rotMat = Matrix.createRotationMatrix(axisX, axisY, axisZ, th);
-		var rotSM = rotMat.getSM().mult(this.v);
-
-		return new Vector(rotSM);
+		return this.transform(rotMat);
 	}
 }
