@@ -143,32 +143,34 @@ public class MatrixTest {
 		var mat = Matrix.createRandomMatrix();
 		// System.out.println(mat);
 	}
-
-	// Todo: Conduct tests with OpenGL programs.
-	/*
 	@Test
 	public void testCreateTranslationMatrix() {
-		
+		var mat = Matrix.createTranslationMatrix(1.0, -2.5, 4.0);
+		// System.out.println(mat);
 	}
 	@Test
 	public void testCreateScalingMatrix() {
-		
+		var mat = Matrix.createScalingMatrix(2.0, -3.0, 4.0);
+		// System.out.println(mat);
 	}
 	@Test
 	public void testCreateRotationXMatrix() {
-		
+		var mat = Matrix.createRotationXMatrix(Math.PI / 4.0);
+		// System.out.println(mat);
 	}
 	@Test
 	public void testCreateRotationYMatrix() {
-		
+		var mat = Matrix.createRotationYMatrix(Math.PI / 4.0);
+		// System.out.println(mat);
 	}
 	@Test
 	public void testCreateRotationZMatrix() {
-		
+		var mat = Matrix.createRotationZMatrix(Math.PI / 4.0);
+		// System.out.println(mat);
 	}
 	@Test
 	public void testCreateRotationMatrix() {
-		
+		var mat = Matrix.createRotationMatrix(1.0, 1.0, 1.0, Math.PI / 4.0);
+		// System.out.println(mat);
 	}
-	*/
 }
