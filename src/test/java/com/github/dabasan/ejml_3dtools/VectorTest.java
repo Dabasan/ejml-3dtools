@@ -187,32 +187,47 @@ public class VectorTest {
 		assertEquals(expected, actual, 1.0E-3);
 	}
 
-	// Todo: Conduct tests with OpenGL programs.
-	/*
 	@Test
 	public void testTransform() {
-		
+		var vec = new Vector(2.0, 3.0, 4.0);
+		var transformed = vec.transform(Matrix.createTranslationMatrix(1.0, 2.0, 3.0));
+
+		// System.out.println(transformed);
 	}
 	@Test
 	public void testTransformSR() {
-		
+		var vec = new Vector(2.0, 3.0, 4.0);
+		var transformed = vec.transformSR(Matrix.createScalingMatrix(1.0, 2.0, 3.0));
+
+		// System.out.println(transformed);
 	}
-	
+
 	@Test
 	public void testRotX() {
-		
+		var vec = new Vector(2.0, 3.0, 4.0);
+		var rotated = vec.rotX(Math.PI / 4.0);
+
+		// System.out.println(rotated);
 	}
 	@Test
 	public void testRotY() {
-		
+		var vec = new Vector(2.0, 3.0, 4.0);
+		var rotated = vec.rotY(Math.PI / 4.0);
+
+		// System.out.println(rotated);
 	}
 	@Test
 	public void testRotZ() {
-		
+		var vec = new Vector(2.0, 3.0, 4.0);
+		var rotated = vec.rotZ(Math.PI / 4.0);
+
+		// System.out.println(rotated);
 	}
 	@Test
 	public void testRot() {
-		
+		var vec = new Vector(2.0, 3.0, 4.0);
+		var rotated = vec.rot(1.0, 1.0, 1.0, Math.PI / 4.0);
+
+		// System.out.println(rotated);
 	}
-	*/
 }
