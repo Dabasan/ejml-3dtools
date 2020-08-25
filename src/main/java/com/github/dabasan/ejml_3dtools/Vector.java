@@ -127,6 +127,9 @@ public class Vector {
 	public double getZ() {
 		return v.get(2, 0);
 	}
+	public double getW() {
+		return v.get(3, 0);
+	}
 	public float getXFloat() {
 		return (float) v.get(0, 0);
 	}
@@ -135,6 +138,9 @@ public class Vector {
 	}
 	public float getZFloat() {
 		return (float) v.get(2, 0);
+	}
+	public float getWFloat() {
+		return (float) v.get(3, 0);
 	}
 
 	public void set(double x, double y, double z) {
@@ -150,6 +156,9 @@ public class Vector {
 	}
 	public void setZ(double value) {
 		v.set(2, 0, value);
+	}
+	public void setW(double value) {
+		v.set(3, 0, value);
 	}
 
 	/**
