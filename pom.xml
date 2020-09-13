@@ -5,7 +5,7 @@
 
 	<groupId>com.github.dabasan</groupId>
 	<artifactId>ejml-3dtools</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 	<name>ejml-3dtools</name>
 	<description>A Java library for 3D vector and matrix operations</description>
