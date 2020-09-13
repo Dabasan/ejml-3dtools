@@ -4,6 +4,10 @@
 
 線形代数ライブラリの[EJML](https://github.com/lessthanoptimal/ejml)を使用して作成されています。
 
+# 必要環境
+
+Java ≥ 11
+
 # インストール
 
 ## Maven
