@@ -4,3 +4,15 @@
 
 線形代数ライブラリの[EJML](https://github.com/lessthanoptimal/ejml)を使用して作成されています。
 
+# インストール
+
+## Maven
+
+Maven Centralからダウンロードできます。
+
+```xml
+<groupId>com.github.dabasan</groupId>
+<artifactId>ejml-3dtools</artifactId>
+<version>0.0.1</version>
+```
+
